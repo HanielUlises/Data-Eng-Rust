@@ -1,5 +1,5 @@
-   0.031721753s  INFO prepare_target{force=false package_id=graph_centrality v0.1.0 (/home/haniel/Projects/Data-Eng-Rust/graph_centrality) target="graph_centrality"}: cargo::core::compiler::fingerprint: fingerprint error for graph_centrality v0.1.0 (/home/haniel/Projects/Data-Eng-Rust/graph_centrality)/Check { test: false }/TargetInner { name: "graph_centrality", doc: true, ..: with_path("/home/haniel/Projects/Data-Eng-Rust/graph_centrality/src/main.rs", Edition2024) }
-   0.031771744s  INFO prepare_target{force=false package_id=graph_centrality v0.1.0 (/home/haniel/Projects/Data-Eng-Rust/graph_centrality) target="graph_centrality"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/haniel/Projects/Data-Eng-Rust/graph_centrality/target/debug/.fingerprint/graph_centrality-d4c44f5802b58376/bin-graph_centrality`
+   0.028300531s  INFO prepare_target{force=false package_id=graph_centrality v0.1.0 (/home/haniel/Projects/Data-Eng-Rust/graph_centrality) target="graph_centrality"}: cargo::core::compiler::fingerprint: fingerprint error for graph_centrality v0.1.0 (/home/haniel/Projects/Data-Eng-Rust/graph_centrality)/Check { test: false }/TargetInner { name: "graph_centrality", doc: true, ..: with_path("/home/haniel/Projects/Data-Eng-Rust/graph_centrality/src/main.rs", Edition2024) }
+   0.028321142s  INFO prepare_target{force=false package_id=graph_centrality v0.1.0 (/home/haniel/Projects/Data-Eng-Rust/graph_centrality) target="graph_centrality"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/haniel/Projects/Data-Eng-Rust/graph_centrality/target/debug/.fingerprint/graph_centrality-d4c44f5802b58376/bin-graph_centrality`
 
 Caused by:
     No such file or directory (os error 2)
@@ -43,8 +43,8 @@ Stack backtrace:
   25: __libc_start_main_impl
              at ./csu/../csu/libc-start.c:392:3
   26: <unknown>
-   0.105177903s  INFO prepare_target{force=false package_id=graph_centrality v0.1.0 (/home/haniel/Projects/Data-Eng-Rust/graph_centrality) target="graph_centrality"}: cargo::core::compiler::fingerprint: fingerprint error for graph_centrality v0.1.0 (/home/haniel/Projects/Data-Eng-Rust/graph_centrality)/Check { test: true }/TargetInner { name: "graph_centrality", doc: true, ..: with_path("/home/haniel/Projects/Data-Eng-Rust/graph_centrality/src/main.rs", Edition2024) }
-   0.105190141s  INFO prepare_target{force=false package_id=graph_centrality v0.1.0 (/home/haniel/Projects/Data-Eng-Rust/graph_centrality) target="graph_centrality"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/haniel/Projects/Data-Eng-Rust/graph_centrality/target/debug/.fingerprint/graph_centrality-1432b16f9e008dcc/test-bin-graph_centrality`
+   0.101242588s  INFO prepare_target{force=false package_id=graph_centrality v0.1.0 (/home/haniel/Projects/Data-Eng-Rust/graph_centrality) target="graph_centrality"}: cargo::core::compiler::fingerprint: fingerprint error for graph_centrality v0.1.0 (/home/haniel/Projects/Data-Eng-Rust/graph_centrality)/Check { test: true }/TargetInner { name: "graph_centrality", doc: true, ..: with_path("/home/haniel/Projects/Data-Eng-Rust/graph_centrality/src/main.rs", Edition2024) }
+   0.101255976s  INFO prepare_target{force=false package_id=graph_centrality v0.1.0 (/home/haniel/Projects/Data-Eng-Rust/graph_centrality) target="graph_centrality"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/haniel/Projects/Data-Eng-Rust/graph_centrality/target/debug/.fingerprint/graph_centrality-1432b16f9e008dcc/test-bin-graph_centrality`
 
 Caused by:
     No such file or directory (os error 2)
