@@ -11,6 +11,7 @@ use cli_salad::create_fruit_salad;
 struct Opts{
     #[clap(short, long)]
     number: usize,
+    frutis: Option<String>
 }
 
 fn main() {
