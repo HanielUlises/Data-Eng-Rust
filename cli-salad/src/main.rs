@@ -11,7 +11,21 @@ use cli_salad::create_fruit_salad;
 struct Opts{
     #[clap(short, long)]
     number: usize,
-    frutis: Option<String>
+    frutis: Option<String>,
+    csvfile: Option<String>,
+}
+
+fn csv_to_vec(csv: &str) -> Vec<String> {
+    csv.split(',')
+        .map(|s| s.trim().to_string())
+        .collect()
+}
+
+fn display_fruit_salad(fruits: Vec<String>) {
+    println!("Your fruit salad contains: ");
+    for fruit in fruits {
+        print!("{}", fruit);
+    }
 }
 
 fn main() {
