@@ -11,7 +11,7 @@ use cli_salad::create_fruit_salad;
 struct Opts{
     #[clap(short, long)]
     number: usize,
-    frutis: Option<String>,
+    fruits: Option<String>,
     csvfile: Option<String>,
 }
 
@@ -30,13 +30,21 @@ fn display_fruit_salad(fruits: Vec<String>) {
 
 fn main() {
     let opts: Opts = Opts::parse();
-    let num_fruits = opts.number;
 
-    create_fruit_salad(num_fruits);
+    let fruit_list = match opts.csvfile {
+        Some(filename ) => {
+            let fruits = std::fs::read_to_string(filename)
+                .expect("Could not read the file");
+            csv_to_vec(&fruits)
+        },
+        None => {
+            opts.fruits.unwrap_or_default()
+                .split(',')
+                .map(|s| s.trim().to_string())
+                .collect()
+        },
+    };
 
-    println!(
-        "Created Fruit salad with {} fruits {:?}",
-        num_fruits,
-        create_fruit_salad(num_fruits)
-    );
+    let fruit_salad = create_fruit_salad(fruit_list);
+    display_fruit_salad(fruit_salad);
 }
