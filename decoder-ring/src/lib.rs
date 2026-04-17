@@ -56,7 +56,7 @@ pub fn decrypt(text: &str, shift: u8) -> String {
     for c in text.chars() {
         if c.is_ascii_alphabetic() {
             let base = if c.is_ascii_lowercase() { b'a'} else { b'A'};
-            let offset = (c as u8 - base + shit) % 26;
+            let offset = (c as u8 - base + shift) % 26;
             result.push((base + offset) as char);
         } else {
             result.push(c);
@@ -64,4 +64,31 @@ pub fn decrypt(text: &str, shift: u8) -> String {
     }
 
     result
+}
+
+pub fn guess_shift(text: &str, depth: u8) -> (u8, u8, String, f32) {
+    let mut max_score = 0.0;
+    let mut best_shift = 0;
+    let mut decrypted = String::new();
+
+    for shift in 0..depth {
+        let decrypted_text = decrypt(text, shift);
+        let stats = stats_analysis(&decrypted_text);
+
+        let mut score = 0.0;
+        for(_, _, freq, eng_freq, eng_freq_diff) in stats {
+            if let Some(eng_freq) = eng_freq {
+                score += (1.0 - eng_freq_diff / eng_freq) * freq;
+            }
+        }
+
+        println!("Shift: {}, Score: {}", shift, score);
+        if score > max_score {
+            max_score = score;
+            best_shift = shift;
+            decrypted = decrypted_text;
+        }
+    }
+
+    (depth, best_shift, decrypted, max_score)
 }
