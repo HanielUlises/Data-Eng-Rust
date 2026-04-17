@@ -32,7 +32,7 @@ fn stats_analysis(text: &str) -> Vec<(char, u32, f32, Option<f32>, f32)> {
 
     for(letter, count) in &counts {
         let freq = (*count as f32 / total as f32) * 100.0;
-        let eng_freq = eng_freq_map.get(&letter.to_ascii_lowercase()).clone();
+        let eng_freq = eng_freq_map.get(&letter.to_ascii_lowercase()).cloned();
 
         let eng_freq_diff = eng_freq.map_or(0.0, |f|(freq - f).abs());
 
