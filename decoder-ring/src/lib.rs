@@ -1,4 +1,4 @@
-use std::{collections::HashMap, hash::Hash};
+use std::{collections::HashMap, hash::Hash, os::linux::raw::stat};
 
 fn gen_counts() -> HashMap<char, f32> {
     let mut eng_freq: HashMap<char, f32> = HashMap::new();
@@ -41,3 +41,11 @@ fn stats_analysis(text: &str) -> Vec<(char, u32, f32, Option<f32>, f32)> {
 
     results
 } 
+
+pub fn print_stats_analysis(text: &str) {
+    let stats = stats_analysis(text);
+    for(letter, count, freq, eng_freq, eng_freq_diff) in stats {
+        println!("{}: {} ({}%), English Freq: {} ({}%)", 
+                letter, count, freq, eng_freq.unwrap_or(0.0), eng_freq_diff)
+    }
+}
