@@ -1,3 +1,6 @@
+use sha3_dupe_detector::generate_random_phrases;
+
 fn main() {
-    println!("Hello, world!");
+    let phrases = generate_random_phrases();
+    sha3_dupe_detector::analyze_duplicates(&phrases);
 }
