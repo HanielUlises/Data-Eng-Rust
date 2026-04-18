@@ -24,7 +24,7 @@ fn csv_to_vec(csv: &str) -> Vec<String> {
 fn display_fruit_salad(fruits: Vec<String>) {
     println!("Your fruit salad contains: ");
     for fruit in fruits {
-        print!("{}", fruit);
+        print!("{} ", fruit);
     }
 }
 
