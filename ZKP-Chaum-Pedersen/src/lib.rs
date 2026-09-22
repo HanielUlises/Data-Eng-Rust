@@ -10,6 +10,7 @@ pub fn exponentiate(n: &BigUint, exponent: &BigUint, modulus: &BigUint) -> BigUi
 /// Output = s = k - c * x mod p
 pub fn solve(k: &BigUint, c: &BigUint, x: &BigUint) -> BigUint {
     if *k >= c * x {
-        k - c * x
-    }
+        return (k - c * x).modpow(&BigUint::from(1u32), q);
+    } 
+    return k - c * x;
 }
